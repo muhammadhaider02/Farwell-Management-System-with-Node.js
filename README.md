@@ -50,8 +50,8 @@ MySQL <br>
 **Installation** <br>
 
 **Clone the repository:** <br>
-git clone https://github.com/yourusername/farewell-frolics.git <br>
-cd farewell-frolics <br>
+git clone https://github.com/muhammadhaider02/Farwell-Party-Management-System.git <br>
+cd Farwell-Party-Management-System <br>
 
 **Install dependencies:** <br>
 npm install <br>
