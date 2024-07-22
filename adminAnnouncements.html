@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Announcements - Farewell Management System</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://miro.medium.com/v2/resize:fit:720/format:webp/1*uJnyVXIn9RZI1DyRtbc1-g.jpeg');
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: rgba(0, 0, 0, 0.5);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 70px;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            padding: 2%;
+            margin: auto;
+            width: 80%;
+            margin-top: 0px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #000;
+            padding: 1%;
+            text-align: center;
+            margin-bottom: 2%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .header a {
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 1%;
+            padding: 0.5%;
+            transition: background-color 0.3s ease;
+        }
+        .header a:hover {
+            background-color: #FFF;
+            color: #464646;
+        }
+        .header .home-icon {
+            position: absolute;
+            left: 2%;
+            cursor: pointer;
+            width: 30px;
+        }
+        h1, h2, h3 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 3%;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-control {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .announcement-card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .announcement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .announcement-card p {
+            margin: 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" class="home-icon" alt="Home" onclick="window.location.href='/'">
+        <a href="/menu">Menu</a>
+        <a href="/event">Events</a>
+        <a href="/performance">Performance</a>
+        <a href="/attendance">Attendance</a>
+        <a href="/adminAnnouncements">Announcements</a>
+        <a href="/tasksManagement">Tasks</a>
+        <a href="/budgetManagement">Budget</a>
+        <a href="/reports">Reports</a>
+    </div>
+
+    <div class="container mt-3">
+        <h1>Create Announcement</h1>
+        <form id="createAnnouncementForm">
+            <div class="form-group">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Title" required>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" id="description" name="description" rows="4" placeholder="Description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="departments">Concerned Departments</label>
+                <div id="departments" class="form-check">
+                    <input type="checkbox" class="form-check-input" id="decor" name="departments" value="Decor">
+                    <label class="form-check-label" for="decor">Decor</label><br>
+                    <input type="checkbox" class="form-check-input" id="invitation" name="departments" value="Invitation">
+                    <label class="form-check-label" for="invitation">Invitation</label><br>
+                    <input type="checkbox" class="form-check-input" id="management" name="departments" value="Management">
+                    <label class="form-check-label" for="management">Management</label><br>
+                    <input type="checkbox" class="form-check-input" id="teachers" name="departments" value="Teachers">
+                    <label class="form-check-label" for="teachers">Teachers</label><br>
+                    <input type="checkbox" class="form-check-input" id="families" name="departments" value="Families">
+                    <label class="form-check-label" for="families">Families</label><br>
+                    <input type="checkbox" class="form-check-input" id="students" name="departments" value="Students">
+                    <label class="form-check-label" for="students">Students</label><br>
+                    <input type="checkbox" class="form-check-input" id="seniors" name="departments" value="Seniors">
+                    <label class="form-check-label" for="seniors">Seniors</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Announcement</button>
+        </form>
+
+        <h2 class="mt-5">Announcements</h2>
+        <div id="announcementsList">
+            <!-- Dynamic content will be loaded here -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#createAnnouncementForm').on('submit', function(e) {
+                e.preventDefault();
+                var formData = $(this).serializeArray();
+                var departments = [];
+                formData.forEach(function(item) {
+                    if (item.name === 'departments') {
+                        departments.push(item.value);
+                    }
+                });
+                formData = formData.filter(item => item.name !== 'departments');
+                formData.push({ name: 'departments', value: departments.join(', ') });
+
+                $.post('/create_announcement', formData, function(response) {
+                    alert('Announcement created successfully!');
+                    fetchAnnouncements(); // Refresh the announcements list
+                }).fail(function() {
+                    alert('Failed to create announcement.');
+                });
+            });
+
+            function fetchAnnouncements() {
+                fetch('/get_announcements').then(response => response.json()).then(data => {
+                    const list = document.getElementById('announcementsList');
+                    list.innerHTML = '';
+                    data.forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = 'announcement-card';
+                        div.innerHTML = `<p><strong>${item.title}</strong>: ${item.description} - <em>${item.departments}</em></p>`;
+                        list.appendChild(div);
+                    });
+                });
+            }
+
+            fetchAnnouncements(); // Initial fetch of announcements
+        });
+    </script>
+</body>
+</html>
