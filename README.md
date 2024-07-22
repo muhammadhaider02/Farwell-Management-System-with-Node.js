@@ -26,18 +26,18 @@ Special registration for teachers, including details about accompanying family m
 Managers can make announcements, approve voted items, and assign tasks. <br>
 
 **💻 Technical Details** <br>
-Database: MySQL <br>
-Backend: Node.js with Express.js <br>
-Frontend: HTML, CSS, JavaScript <br>
-ERD and Schema: Designed using draw.io <br>
+**Database:** MySQL <br>
+**Backend:** Node.js with Express.js <br>
+**Frontend:** HTML, CSS, JavaScript <br>
+**ERD and Schema:** Designed using draw.io <br>
 
 **🔧 Key Features Implemented** <br>
-User Registration and Login Forms: For students, teachers, and managers. <br>
-Dinner Menu Planning Module: Suggestion and voting system for menu items. <br>
-Stage Performance Proposal Module: Proposal and voting system for performances. <br>
-Task Assignment Interface: Easy assignment and tracking of tasks. <br>
-Budget Tracking System: Real-time expense monitoring and alerts. <br>
-Announcements and Notifications: Managers can make announcements and manage approvals. <br>
+**User Registration and Login Forms:** For students, teachers, and managers. <br>
+**Dinner Menu Planning Module:** Suggestion and voting system for menu items. <br>
+**Stage Performance Proposal Module:** Proposal and voting system for performances. <br>
+**Task Assignment Interface:** Easy assignment and tracking of tasks. <br>
+**Budget Tracking System:** Real-time expense monitoring and alerts. <br>
+**Announcements and Notifications:** Managers can make announcements and manage approvals. <br>
 
 **🎯 Next Steps** <br>
 Enhance the UI/UX for a more seamless experience. <br>
@@ -49,14 +49,14 @@ MySQL <br>
 
 **Installation** <br>
 
-**Clone the repository: **<br>
+**Clone the repository:** <br>
 git clone https://github.com/yourusername/farewell-frolics.git <br>
 cd farewell-frolics <br>
 
-**Install dependencies: **<br>
+**Install dependencies:** <br>
 npm install <br>
 
-**Set up the database: **<br>
+**Set up the database:** <br>
 Import the database schema from the database.sql file into your MySQL database. <br>
 Update the database connection settings in the connection.js file. <br>
 
@@ -75,7 +75,7 @@ A huge thank you to everyone who has supported me along the way! <br>
 
 Feel free to check out more details on the project and give your feedback. 🙌 <br>
 
-**Author: **Muhammad Haider Akbar
-**LinkedIn: **[Your LinkedIn Profile](https://www.linkedin.com/in/muhammadhaider02/)
+**Author:** Muhammad Haider Akbar <br>
+**LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/muhammadhaider02/)
 
 Enjoy organizing your events with Farewell Frolics! 🎉
