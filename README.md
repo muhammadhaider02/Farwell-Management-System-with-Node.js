@@ -7,8 +7,8 @@ Farewell Frolics is a comprehensive platform tailored for organizing farewell pa
 
 ## Project Highlights
 1. User Roles and Registration
-- Separate logins for Students, Teachers, and Managers.
-- Custom fields for dietary preferences, additional family members, and more.
+  - Separate logins for Students, Teachers, and Managers.
+  - Custom fields for dietary preferences, additional family members, and more.
 
 2. Menu and Performance Planning <br>
 Students can suggest and vote for dinner menu items and propose stage performances. <br>
