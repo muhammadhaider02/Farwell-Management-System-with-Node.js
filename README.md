@@ -6,9 +6,11 @@ Welcome to the Farewell Frolics project repository! This platform is designed to
 Farewell Frolics is a comprehensive platform tailored for organizing farewell parties. It caters to various user roles, including students, teachers, and managers, providing them with specific functionalities to ensure a smooth and enjoyable event planning process. <br>
 
 ## Project Highlights
-1. User Roles and Registration
-  - Separate logins for Students, Teachers, and Managers.
-  - Custom fields for dietary preferences, additional family members, and more.
+1. **User Roles and Registration**  
+   - Separate logins for **Students**, **Teachers**, and **Managers**.  
+   - Custom fields for:  
+     - Dietary preferences  
+     - Additional family members  
 
 2. Menu and Performance Planning <br>
 Students can suggest and vote for dinner menu items and propose stage performances. <br>
